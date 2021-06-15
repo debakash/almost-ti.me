@@ -17,8 +17,10 @@ app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 app.use(express.raw());
 
-const port = process.env.PORT;
-
+let port:number = Number(process.env.PORT);
+if(!port){
+	port = 80
+} 
 app.listen(port, (() => {
 	console.log('App listening on port ' + port);
 }));
