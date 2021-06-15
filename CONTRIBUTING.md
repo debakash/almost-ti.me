@@ -1,0 +1,1 @@
+By contributing to almost-ti.me, you are agreeing that you share the same core values that we do - creating great software for everyone. Below, are some simple guidlines which we ask you to follow - to make OSS great again!

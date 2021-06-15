@@ -1,0 +1,133 @@
+<!doctype html>
+
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+
+  <title>almost-ti.me</title>
+  <meta name="description" content="A simpler way to create countdown clocks.">
+  <meta name="author" content="almost-ti.me">
+
+  <link href="https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css" rel="stylesheet">
+
+</head>
+
+<body>
+  <header class="text-gray-400 bg-gray-900 body-font">
+    <div class="container mx-auto flex flex-wrap p-5 flex-col md:flex-row items-center">
+      <a class="flex title-font font-medium items-center text-white mb-4 md:mb-0">
+        <span class="ml-3 text-xl">almost-ti.me</span>
+      </a>
+      <nav class="md:ml-auto md:mr-auto flex flex-wrap items-center text-base justify-center">
+        <a class="mr-5 hover:text-white" href="/">current time</a>
+        <a class="mr-5 hover:text-white" href="/create">create a countdown timer</a>
+        <a class="mr-5 hover:text-white" href="https://docs.almost-ti.me">documentation</a>
+      </nav>
+    </div>
+  </header>
+  
+  <section class="text-gray-400 bg-gray-900 body-font">
+    <div class="container mx-auto flex px-5 py-24 items-center justify-center flex-col">
+      <img class="lg:w-2/6 md:w-3/6 w-5/6 mb-10 object-cover object-center rounded" alt="hero" src="https://cdn.discordapp.com/attachments/741334483348881499/852634768134635530/almost-ti.me_1.png">
+      <div class="text-center lg:w-2/3 w-full">
+        <form action="/clock/create">
+          <h1 class="title-font sm:text-1xl text-xl mb-4 font-medium text-white">What is the day of your countdown?</h1>
+          <select name="day">
+             <option value="1" selected>1</option>
+             <option value="2">2</option>
+             <option value="3">3</option>
+             <option value=4">4</option>
+             <option value="5">5</option>
+             <option value="6">6</option>
+             <option value="7">7</option>
+             <option value="8">8</option>
+             <option value="9">9</option>
+             <option value="10">10</option>
+             <option value="11">11</option>
+             <option value="12">12</option>
+             <option value="13">13</option>
+             <option value="14">14</option>
+             <option value="15">15</option>
+             <option value="16">16</option>
+             <option value="17">17</option>
+             <option value="18">18</option>
+             <option value="19">19</option>
+             <option value="20">20</option>
+             <option value="21">21</option>
+             <option value="22">22</option>
+             <option value="23">23</option>
+             <option value="24">24</option>
+             <option value="25">25</option>
+             <option value="26">26</option>
+             <option value="27">27</option>
+             <option value="28">28</option>
+             <option value="29">29</option>
+             <option value="30">30</option>
+             <option value="31">31</option>
+
+          </select>
+          <br>
+          <h1 class="title-font sm:text-1xl text-xl mb-4 font-medium text-white">What is the month of your countdown?</h1>
+          <select name="month">
+            <option value="January" selected>January</option>
+            <option value="February">February</option>
+            <option value="March">March</option>
+            <option value="April">April</option>
+            <option value="May">May</option>
+            <option value="June">June</option>
+            <option value="July">July</option>
+            <option value="August">August</option>
+            <option value="September">September</option>
+            <option value="October">October</option>
+            <option value="November">November</option>
+            <option value="December">December</option>
+         </select>
+         <br>
+
+         <h1 class="title-font sm:text-1xl text-xl mb-4 font-medium text-white">What is the year of your countdown?</h1>
+         <select name="year">
+           <option value="2021" selected>2021</option>
+           <option value="2022">2022</option>
+           <option value="2023">2023</option>
+           <option value="2024">2024</option>
+           <option value="2025">2025</option>
+           <option value="2026">2026</option>
+           <option value="2027">2027</option>
+           <option value="2028">2028</option>
+           <option value="2029">2029</option>
+           <option value="2030">2030</option>
+        </select>
+        <br>
+
+        <h1 class="title-font sm:text-1xl text-xl mb-4 font-medium text-white">What is the countdowns name?</h1>
+        <input type="text" id="eventName" name="eventName" value="Event Name"><br><br>
+        <input type="checkbox" name="toRedirect" checked hidden>
+        <input type="submit" value="Submit">
+       </form>
+      </div>
+    </div>
+  </section>
+
+  <section class="text-gray-400 bg-gray-900 body-font">
+    <div class="container px-5 py-24 mx-auto">
+      <div class="lg:w-2/3 flex flex-col sm:flex-row sm:items-center items-start mx-auto">
+        <h1 class="flex-grow sm:pr-16 text-2xl font-medium title-font text-white">create your countdown timer today!</h1>
+        <a href="/create">
+          <button class="flex-shrink-0 text-white bg-yellow-500 border-0 py-2 px-8 focus:outline-none hover:bg-yellow-600 rounded text-lg mt-10 sm:mt-0">Create now!</button>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <footer class="text-gray-400 bg-gray-900 body-font">
+    <div class="container px-5 py-8 mx-auto flex items-center sm:flex-row flex-col">
+      <a class="flex title-font font-medium items-center md:justify-start justify-center text-white">
+        <span class="ml-3 text-xl">almost-ti.me</span>
+      </a>
+      <p class="text-sm text-gray-400 sm:ml-4 sm:pl-4 sm:border-l-2 sm:border-gray-800 sm:py-2 sm:mt-0 mt-4">© 2021 almost-ti.me — Created by Akash
+      </p>
+    </div>
+  </footer>
+
+</body>
+</html>

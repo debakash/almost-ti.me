@@ -1,0 +1,93 @@
+<!doctype html>
+
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+
+  <title>almost-ti.me</title>
+  <meta name="description" content="A simpler way to create countdown clocks.">
+  <meta name="author" content="almost-ti.me">
+
+  <link href="https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css" rel="stylesheet">
+
+</head>
+
+<body>
+  <header class="text-gray-400 bg-gray-900 body-font">
+    <div class="container mx-auto flex flex-wrap p-5 flex-col md:flex-row items-center">
+      <a class="flex title-font font-medium items-center text-white mb-4 md:mb-0">
+        <span class="ml-3 text-xl">almost-ti.me</span>
+      </a>
+      <nav class="md:ml-auto md:mr-auto flex flex-wrap items-center text-base justify-center">
+        <a class="mr-5 hover:text-white" href="/">current time</a>
+        <a class="mr-5 hover:text-white" href="/create">create a countdown timer</a>
+        <a class="mr-5 hover:text-white" href="https://docs.almost-ti.me">documentation</a>
+      </nav>
+    </div>
+  </header>
+  
+  <section class="text-gray-400 bg-gray-900 body-font">
+    <div class="container mx-auto flex px-5 py-24 items-center justify-center flex-col">
+      <img class="lg:w-2/6 md:w-3/6 w-5/6 mb-10 object-cover object-center rounded" alt="hero" src="https://cdn.discordapp.com/attachments/741334483348881499/852634768134635530/almost-ti.me_1.png">
+      <h1 class="title-font sm:text-4xl text-2xl mb-4 font-medium text-white">Countdown to <%= eventName %>:</h1>
+      <div id="" class="title-font sm:text-2xl text-xl mb-4 font-medium text-white">And its on <%= date.getDate() + '/' + date.getMonth() + '/' + date.getFullYear()  %> which is in:</div> 
+      <div id="demo" class="title-font sm:text-1xl text-xl mb-4 font-medium text-white"></div> 
+
+    </div>
+  </section>
+
+  <section class="text-gray-400 bg-gray-900 body-font">
+    <div class="container px-5 py-24 mx-auto">
+      <div class="lg:w-2/3 flex flex-col sm:flex-row sm:items-center items-start mx-auto">
+        <h1 class="flex-grow sm:pr-16 text-2xl font-medium title-font text-white">create your countdown timer today!</h1>
+        <a href="/create">
+          <button class="flex-shrink-0 text-white bg-yellow-500 border-0 py-2 px-8 focus:outline-none hover:bg-yellow-600 rounded text-lg mt-10 sm:mt-0">Create now!</button>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <footer class="text-gray-400 bg-gray-900 body-font">
+    <div class="container px-5 py-8 mx-auto flex items-center sm:flex-row flex-col">
+      <a class="flex title-font font-medium items-center md:justify-start justify-center text-white">
+        <span class="ml-3 text-xl">almost-ti.me</span>
+      </a>
+      <p class="text-sm text-gray-400 sm:ml-4 sm:pl-4 sm:border-l-2 sm:border-gray-800 sm:py-2 sm:mt-0 mt-4">© 2021 almost-ti.me — Created by Akash
+      </p>
+    </div>
+  </footer>
+
+  <script>
+    // Set the date we're counting down to
+    var countDownDate = new Date("<%= date %>").getTime();
+    
+    // Update the count down every 1 second
+    var x = setInterval(function() {
+    
+      // Get today's date and time
+      var now = new Date().getTime();
+        
+      // Find the distance between now and the count down date
+      var distance = countDownDate - now;
+        
+      // Time calculations for days, hours, minutes and seconds
+      var days = Math.floor(distance / (1000 * 60 * 60 * 24));
+      var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+      var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+      var seconds = Math.floor((distance % (1000 * 60)) / 1000);
+        
+      // Output the result in an element with id="demo"
+      document.getElementById("demo").innerHTML = days + "d " + hours + "h "
+      + minutes + "m " + seconds + "s ";
+        
+      // If the count down is over, write some text 
+      if (distance < 0) {
+        clearInterval(x);
+        document.getElementById("demo").innerHTML = "Its time!";
+      }
+    }, 1000);
+    </script>
+    
+
+</body>
+</html>

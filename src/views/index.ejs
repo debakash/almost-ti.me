@@ -1,0 +1,90 @@
+<!doctype html>
+
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+
+  <title>almost-ti.me</title>
+  <meta name="description" content="A simpler way to create countdown clocks.">
+  <meta name="author" content="almost-ti.me">
+
+  <link href="https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css" rel="stylesheet">
+
+</head>
+
+<body>
+  <header class="text-gray-400 bg-gray-900 body-font">
+    <div class="container mx-auto flex flex-wrap p-5 flex-col md:flex-row items-center">
+      <a class="flex title-font font-medium items-center text-white mb-4 md:mb-0">
+        <span class="ml-3 text-xl">almost-ti.me</span>
+      </a>
+      <nav class="md:ml-auto md:mr-auto flex flex-wrap items-center text-base justify-center">
+        <a class="mr-5 hover:text-white" href="/">current time</a>
+        <a class="mr-5 hover:text-white" href="/create">create a countdown timer</a>
+        <a class="mr-5 hover:text-white" href="https://docs.almost-ti.me">documentation</a>
+      </nav>
+    </div>
+  </header>
+  
+  <section class="text-gray-400 bg-gray-900 body-font">
+    <div class="container mx-auto flex px-5 py-24 items-center justify-center flex-col">
+      <img class="lg:w-2/6 md:w-3/6 w-5/6 mb-10 object-cover object-center rounded" alt="hero" src="https://cdn.discordapp.com/attachments/741334483348881499/852634768134635530/almost-ti.me_1.png">
+      <div class="text-center lg:w-2/3 w-full">
+        <h1 class="title-font sm:text-4xl text-3xl mb-4 font-medium text-white">the time right now in the 24 hour clock format is:</h1>
+        <h1 class="title-font sm:text-1xl text-xl mb-4 font-medium text-white">p.s - this clock auto updates, no need to refresh your page or do anything. it just ticks away!</h1>
+        <div id="clock" class="title-font sm:text-3xl text-2xl mb-4 font-light text-white">
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="text-gray-400 bg-gray-900 body-font">
+    <div class="container px-5 py-24 mx-auto">
+      <div class="lg:w-2/3 flex flex-col sm:flex-row sm:items-center items-start mx-auto">
+        <h1 class="flex-grow sm:pr-16 text-3xl font-lighttitle-font text-white">countdown to your special day, with almost-ti.me</h1>
+        <a href="/create">
+          <button class="flex-shrink-0 text-white bg-yellow-500 border-0 py-2 px-8 focus:outline-none hover:bg-yellow-600 rounded text-lg mt-10 sm:mt-0">Create now!</button>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <footer class="text-gray-400 bg-gray-900 body-font">
+    <div class="container px-5 py-8 mx-auto flex items-center sm:flex-row flex-col">
+      <a class="flex title-font font-medium items-center md:justify-start justify-center text-white">
+        <span class="ml-3 text-xl">almost-ti.me</span>
+      </a>
+      <p class="text-sm text-gray-400 sm:ml-4 sm:pl-4 sm:border-l-2 sm:border-gray-800 sm:py-2 sm:mt-0 mt-4">© 2021 almost-ti.me — created by akash
+      </p>
+      <a href="https://github.com/debakash/almost-ti.me" class="flextext-sm text-gray-400 sm:ml-4 sm:pl-4 sm:border-l-2 sm:border-gray-800 sm:py-2 sm:mt-0 mt-4">
+        <p>View the GitHub repository</p>
+      </a>
+    </div>
+  </footer>
+
+  <script type="text/javascript">
+      function currentTime() {
+    var date = new Date(); /* creating object of Date class */
+    var hour = date.getHours();
+    var min = date.getMinutes();
+    var sec = date.getSeconds();
+    hour = updateTime(hour);
+    min = updateTime(min);
+    sec = updateTime(sec);
+    document.getElementById("clock").innerText = hour + " : " + min + " : " + sec; 
+    var t = setTimeout(function(){ currentTime() }, 1000); 
+  }
+
+  function updateTime(k) {
+    if (k < 10) {
+      return "0" + k;
+    }
+    else {
+      return k;
+    }
+  }
+
+  currentTime(); 
+  </script>
+</body>
+</html>
