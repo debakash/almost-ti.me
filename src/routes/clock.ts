@@ -5,11 +5,12 @@ const router = Router();
 
 router.get('/', (_req, res) => res.render('createCountdown'));
 router.get('/create', async (req, res) => {
-	const { month, day, year, eventName, toRedirect } = req.query;
+	let { month, day, year, eventName, toRedirect } = req.query;
 	if(!month) return res.status(400).json({ statusCode: 200, error: 'Bad Request - Missing \'month\' value from request.' });
 	if(!day) return res.status(400).json({ statusCode: 200, error: 'Bad Request - Missing \'day\' value from request.' });
 	if(!year) return res.status(400).json({ statusCode: 200, error: 'Bad Request - Missing \'year\' value from request.' });
 	if(!eventName) return res.status(400).json({ statusCode: 200, error: 'Bad Request - Missing \'eventName\' value from request.' });
+	if(!toRedirect) return toRedirect = "off"
 
 	const newClock = await new countdownClock({
 		clockId: randomstring.generate(8),
