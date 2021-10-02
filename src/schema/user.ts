@@ -1,8 +1,8 @@
 import mongoose from 'mongoose';
 
 const UserSchema = new mongoose.Schema({
-	username: String,
-	passwordHash: String,
+	username: { type: String, required: true },
+	passwordHash: { type: String, required: true }
 });
 
 export default mongoose.model('user', UserSchema);
